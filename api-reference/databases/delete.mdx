@@ -1,0 +1,23 @@
+---
+title: "Excluir Banco"
+api: "DELETE https://api.stackr.lat/v1/databases/{id}"
+description: "Para a instância do banco de dados e apaga permanentemente todos os volumes de dados locais."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  Identificador do seu banco de dados.
+</ParamField>
+
+> [!CAUTION]
+> Esta operação é definitiva e apagará permanentemente todas as tabelas, registros, credenciais e volumes físicos do banco do nosso cluster.
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "message": "Banco de dados removido com sucesso."
+}
+```

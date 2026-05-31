@@ -1,0 +1,25 @@
+---
+title: "Ler Arquivo"
+api: "GET https://api.stackr.lat/v1/apps/{id}/files/content"
+description: "Obtém o conteúdo de texto de um arquivo de código específico."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Query
+
+<ParamField query="path" type="string" required>
+  O caminho completo do arquivo a ser lido (ex: `/app/src/index.js`).
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "content": "{\n  \"name\": \"meu-bot\",\n  \"version\": \"1.0.0\",\n  \"main\": \"index.js\"\n}"
+}
+```

@@ -1,0 +1,29 @@
+---
+title: "Excluir Arquivo/Pasta"
+api: "POST https://api.stackr.lat/v1/apps/{id}/files/delete"
+description: "Remove permanentemente um arquivo ou diretório recursivo."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Requisição (JSON Body)
+
+<ParamField body="path" type="string" required>
+  O caminho completo do arquivo ou pasta a ser deletado.
+</ParamField>
+
+> [!WARNING]
+> Excluir um diretório apagará recursivamente todos os seus subdiretórios e arquivos internos de forma definitiva.
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "message": "Item removido com sucesso de nossos servidores."
+}
+```

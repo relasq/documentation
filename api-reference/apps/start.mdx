@@ -1,0 +1,21 @@
+---
+title: "Iniciar Aplicativo"
+api: "POST https://api.stackr.lat/v1/apps/{id}/start"
+description: "Inicia o container da aplicação caso esteja desligado."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "status": "RUNNING",
+  "message": "Aplicação iniciada com sucesso."
+}
+```

@@ -1,0 +1,26 @@
+---
+title: "Criar Diretório"
+api: "POST https://api.stackr.lat/v1/apps/{id}/files/mkdir"
+description: "Cria uma nova pasta recursivamente no workspace."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Requisição (JSON Body)
+
+<ParamField body="path" type="string" required>
+  Caminho absoluto do novo diretório a ser criado.
+</ParamField>
+
+### Resposta de Sucesso (`201 Created`)
+
+```json
+{
+  "success": true,
+  "message": "Diretório criado com sucesso."
+}
+```

@@ -1,0 +1,21 @@
+---
+title: "Iniciar Banco"
+api: "POST https://api.stackr.lat/v1/databases/{id}/start"
+description: "Inicia o container do banco de dados caso esteja desligado."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  Identificador do seu banco de dados.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "status": "RUNNING",
+  "message": "Banco de dados iniciado com sucesso."
+}
+```

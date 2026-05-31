@@ -1,0 +1,26 @@
+---
+title: "Commit via ZIP"
+api: "POST https://api.stackr.lat/v1/apps/{id}/commit"
+description: "Envia um arquivo compactado para atualizar o diretório de código existente no container."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Requisição
+
+<ParamField body="file" type="file" required>
+  Arquivo compactado em ZIP contendo as modificações/arquivos de atualização (limite de 50 MB).
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "message": "Commit realizado com sucesso. Os arquivos foram extraídos e a aplicação foi atualizada."
+}
+```

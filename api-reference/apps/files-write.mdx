@@ -1,0 +1,30 @@
+---
+title: "Salvar/Escrever Arquivo"
+api: "PUT https://api.stackr.lat/v1/apps/{id}/files/content"
+description: "Cria ou substitui o conteúdo completo de um arquivo textual no container."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Requisição (JSON Body)
+
+<ParamField body="path" type="string" required>
+  O caminho relativo ou absoluto de destino (ex: `/app/src/config.json`).
+</ParamField>
+
+<ParamField body="content" type="string" required>
+  O conteúdo textual completo do arquivo (limite de 2 MB).
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "message": "Arquivo gravado com sucesso."
+}
+```

@@ -1,0 +1,21 @@
+---
+title: "Parar Banco"
+api: "POST https://api.stackr.lat/v1/databases/{id}/stop"
+description: "Interrompe com segurança a execução do container do banco de dados."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  Identificador do seu banco de dados.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "status": "STOPPED",
+  "message": "Banco de dados interrompido com sucesso."
+}
+```

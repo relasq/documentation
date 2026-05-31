@@ -1,0 +1,36 @@
+---
+title: "Listar Arquivos"
+api: "GET https://api.stackr.lat/v1/apps/{id}/files"
+description: "Navega e lista os arquivos contidos em um diretório no container."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Query
+
+<ParamField query="path" type="string" default="/app">
+  O caminho do diretório dentro do container a ser listado.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+[
+  {
+    "name": "index.js",
+    "isDir": false,
+    "size": 1542,
+    "mtime": "2026-05-31T18:00:00.000Z"
+  },
+  {
+    "name": "utils",
+    "isDir": true,
+    "size": 4096,
+    "mtime": "2026-05-31T18:15:00.000Z"
+  }
+]
+```

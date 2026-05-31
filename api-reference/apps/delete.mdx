@@ -1,0 +1,23 @@
+---
+title: "Excluir Aplicativo"
+api: "POST https://api.stackr.lat/v1/apps/{id}/delete"
+description: "Para o container e exclui permanentemente todos os arquivos e dados associados a esta aplicação."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+> [!CAUTION]
+> Esta operação é irreversível. Todos os arquivos locais da aplicação serão permanentemente apagados do cluster.
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "message": "A aplicação foi removida com sucesso de nossos servidores."
+}
+```

@@ -1,0 +1,43 @@
+---
+title: "Autenticação"
+description: "Saiba como autenticar suas requisições na API pública do Stackr"
+---
+
+Para interagir com as rotas protegidas da API `/v1/`, você precisa fornecer um Token de API válido através dos cabeçalhos HTTP da sua requisição.
+
+## Cabeçalho de Autenticação
+
+A autenticação é feita utilizando o esquema **Bearer Token**. Você deve incluir o cabeçalho `Authorization` em todas as requisições para a API pública:
+
+```http
+Authorization: Bearer <seu_token_de_api>
+```
+
+### Exemplo de Requisição (cURL)
+
+```bash
+curl -X GET "https://api.stackr.lat/v1/apps" \
+  -H "Authorization: Bearer s2_eyJ1c2VySWQiOiJjbH..."
+```
+
+---
+
+## Como Obter seu Token
+
+1. Acesse o seu **Dashboard** na plataforma Stackr.
+2. Navegue até a seção de **Configurações da Conta** ou **Chaves de Acesso** (`/dashboard/developer-keys`).
+3. Clique em **Gerar Novo Token de API**.
+4. Copie o token gerado e guarde-o em local seguro (ele não será exibido novamente).
+
+> [!WARNING]
+> O seu Token de API dá acesso total à sua conta, permitindo criar, parar, reiniciar e excluir aplicações e bancos de dados. Nunca compartilhe seu token publicamente, não o inclua no código do lado do cliente (front-end) e não o comite em repositórios Git públicos.
+
+---
+
+## Detalhes Técnicos de Segurança
+
+Para garantir segurança a nível bancário, todos os Tokens de API gerados pela plataforma utilizam criptografia simétrica robusta:
+
+* **Algoritmo:** `AES-256-GCM` (Advanced Encryption Standard com Galois/Counter Mode).
+* **Payload:** O token contém de forma criptografada o seu identificador de usuário (`userId` como UUID v4) e metadados de expiração.
+* **Validação:** Durante a validação, a API pública descriptografa o token de forma extremamente rápida em memória usando a chave mestra secreta (`TOKEN_ENCRYPTION_KEY`), garantindo que o token não possa ser forjado ou alterado.

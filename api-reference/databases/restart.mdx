@@ -1,0 +1,21 @@
+---
+title: "Reiniciar Banco"
+api: "POST https://api.stackr.lat/v1/databases/{id}/restart"
+description: "Para e inicia novamente a instância do banco de dados de forma instantânea."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  Identificador do seu banco de dados.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "status": "RUNNING",
+  "message": "Banco de dados reiniciado com sucesso."
+}
+```

@@ -1,0 +1,29 @@
+---
+title: "Introdução aos Bancos de Dados"
+description: "A API pública para provisionamento e gestão de bancos de dados PostgreSQL e Redis"
+---
+
+A Stackr oferece suporte a bancos de dados de alta performance provisionados sob demanda em nosso cluster. 
+
+A API do banco de dados permite que você crie, liste, reinicie e monitore logs/telemetria dos seus bancos de dados PostgreSQL e Redis de forma totalmente automatizada.
+
+---
+
+## ⚠️ Status de Ativação (Nota aos Desenvolvedores)
+
+> [!IMPORTANT]
+> A API de Bancos de Dados (`/v1/databases`) está **100% desenvolvida e testada** a nível de controller ([v1-databases.controller.ts](file:///C:/Users/giaco/Downloads/stackr6/apps/api/src/modules/v1/v1-databases.controller.ts)).
+> 
+> No entanto, ela encontra-se **temporariamente desativada** nas rotas públicas pois seu controlador ainda não foi importado no arquivo `v1.module.ts`. 
+> 
+> **Como ativar:** Caso você possua acesso ao código-fonte da API, basta adicionar o `V1DatabasesController` no array de `controllers` do `V1Module` para disponibilizar estes endpoints imediatamente.
+
+---
+
+## Mecanismo de Autenticação
+
+Uma vez ativa, a API utiliza o mesmo padrão de Bearer Token (`ApiTokenGuard`) das outras rotas públicas do Stackr:
+
+```http
+Authorization: Bearer <seu_token>
+```

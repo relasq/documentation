@@ -1,0 +1,32 @@
+---
+title: "Obter Perfil & Plano"
+api: "GET https://api.stackr.lat/v1/users/{id}"
+description: "Retorna as informações do usuário autenticado e os limites do seu plano na Stackr."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  Identificador do seu usuário (ex: `user_7c9b8e21-d102-4cbb-9fa3-a2b1c3d4e5f6`).
+</ParamField>
+
+> [!IMPORTANT]
+> Por razões de privacidade, você só tem permissão para ler os detalhes da sua própria conta. Tentar acessar perfis de terceiros retornará o erro `401 Unauthorized`.
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "ownerId": "user_7c9b8e21-d102-4cbb-9fa3-a2b1c3d4e5f6",
+  "plan": {
+    "id": "plan_b7a8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d",
+    "name": "PRO",
+    "price": 29.90,
+    "memoryLimitMb": 2048,
+    "cpuLimit": 2.0,
+    "maxBots": 10,
+    "maxDatabases": 5,
+    "expiresAt": "2026-06-30T18:30:00.000Z"
+  }
+}
+```

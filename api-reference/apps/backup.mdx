@@ -1,0 +1,18 @@
+---
+title: "Gerar Backup ZIP"
+api: "POST https://api.stackr.lat/v1/apps/{id}/backup"
+description: "Empacota todos os arquivos da aplicação e faz o download direto do backup em formato ZIP."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+A resposta conterá os cabeçalhos apropriados de anexo de arquivo e iniciará a transferência binária do ZIP:
+
+* `Content-Type: application/zip`
+* `Content-Disposition: attachment; filename="backup-a1b2c3...zip"`

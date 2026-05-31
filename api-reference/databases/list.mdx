@@ -1,0 +1,20 @@
+---
+title: "Listar Bancos"
+api: "GET https://api.stackr.lat/v1/databases"
+description: "Retorna a lista de todas as instâncias de bancos de dados provisionadas."
+---
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+[
+  {
+    "id": "db_9f8e7d6c-5b4a-3c2b-1a0e-9d8c7b6a5f4e",
+    "name": "meu-db-producao",
+    "engine": "postgres",
+    "status": "RUNNING",
+    "memoryMb": 512,
+    "createdAt": "2026-05-31T19:00:00.000Z"
+  }
+]
+```

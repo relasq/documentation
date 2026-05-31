@@ -1,0 +1,25 @@
+---
+title: "Logs do Console"
+api: "GET https://api.stackr.lat/v1/apps/{id}/logs"
+description: "Recupera as últimas linhas gravadas no terminal (stdout/stderr) pelo bot."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Query
+
+<ParamField query="tail" type="number" default="100">
+  Número de linhas de logs a serem retornadas (máximo recomendado: `1000`).
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "logs": "[2026-05-31 18:30:00] INFO: Iniciando conexão com a API do Discord...\n[2026-05-31 18:30:02] INFO: Bot conectado como StackrHelper#1337\n[2026-05-31 18:30:05] SUCCESS: Cluster TITAN operacional."
+}
+```

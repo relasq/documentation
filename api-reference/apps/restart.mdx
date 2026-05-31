@@ -1,0 +1,21 @@
+---
+title: "Reiniciar Aplicativo"
+api: "POST https://api.stackr.lat/v1/apps/{id}/restart"
+description: "Para e inicia novamente a aplicação instantaneamente."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "status": "RUNNING",
+  "message": "Aplicação reiniciada com sucesso."
+}
+```

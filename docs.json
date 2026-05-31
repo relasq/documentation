@@ -1,72 +1,157 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Stackr Labs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7c3aed",
+    "light": "#a78bfa",
+    "dark": "#0c0a0f"
   },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
-  },
+  "favicon": "favicon.ico",
   "contextual": {
     "options": [
       "copy",
       "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+      "assistant"
+    ],
+    "display": "header"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentação",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Primeiros Passos",
+            "pages": [
+              "introduction",
+              "authentication"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "rectangle-terminal",
+        "groups": [
+          {
+            "group": "Aplicações (Apps)",
+            "icon": "book-open",
+            "pages": [
+              "api-reference/apps/intro"
+            ]
+          },
+          {
+            "group": "Apps - Gerenciamento",
+            "icon": "list",
+            "pages": [
+              "api-reference/apps/list",
+              "api-reference/apps/details",
+              "api-reference/apps/stats",
+              "api-reference/apps/logs"
+            ]
+          },
+          {
+            "group": "Apps - Ciclo de Vida",
+            "icon": "play",
+            "pages": [
+              "api-reference/apps/start",
+              "api-reference/apps/stop",
+              "api-reference/apps/restart",
+              "api-reference/apps/rebuild",
+              "api-reference/apps/delete"
+            ]
+          },
+          {
+            "group": "Apps - Deploy & Backups",
+            "icon": "plus",
+            "pages": [
+              "api-reference/apps/create",
+              "api-reference/apps/backup",
+              "api-reference/apps/commit"
+            ]
+          },
+          {
+            "group": "Gerenciador de Arquivos",
+            "icon": "folder-open",
+            "pages": [
+              "api-reference/apps/files-intro"
+            ]
+          },
+          {
+            "group": "Workspace (Arquivos)",
+            "icon": "folder-tree",
+            "pages": [
+              "api-reference/apps/files-list",
+              "api-reference/apps/files-read",
+              "api-reference/apps/files-write",
+              "api-reference/apps/files-rename",
+              "api-reference/apps/files-mkdir",
+              "api-reference/apps/files-delete"
+            ]
+          },
+          {
+            "group": "Usuários",
+            "icon": "user",
+            "pages": [
+              "api-reference/users/get"
+            ]
+          },
+          {
+            "group": "Bancos de Dados",
+            "icon": "database",
+            "pages": [
+              "api-reference/databases/intro"
+            ]
+          },
+          {
+            "group": "DB - Provisionamento",
+            "icon": "list-check",
+            "pages": [
+              "api-reference/databases/list",
+              "api-reference/databases/create",
+              "api-reference/databases/details",
+              "api-reference/databases/delete"
+            ]
+          },
+          {
+            "group": "DB - Ciclo de Vida & Monitoramento",
+            "icon": "circle-play",
+            "pages": [
+              "api-reference/databases/start",
+              "api-reference/databases/stop",
+              "api-reference/databases/restart",
+              "api-reference/databases/logs",
+              "api-reference/databases/stats"
+            ]
+          }
+        ]
+      }
     ]
+  },
+  "background": {
+    "color": {
+      "light": "#fafbfc",
+      "dark": "#08090a"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Suporte (Discord)",
+        "href": "https://discord.gg/rHMX8eW9xZ"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Voltar ao Site",
+      "href": "https://stackr.lat"
+    }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "discord": "https://discord.gg/rHMX8eW9xZ"
     }
   }
 }

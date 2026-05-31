@@ -1,0 +1,28 @@
+---
+title: "Introdução ao Apps API"
+description: "Explore o ecossistema de gerenciamento de aplicações e ciclo de vida da Stackr Labs"
+---
+
+A API de Aplicações da **Stackr Labs** permite que você tenha controle total sobre os containers dos seus bots ou projetos hospedados. 
+
+Através dela, você pode realizar a listagem completa, obter telemetria ativa em tempo real, gerenciar backups seguros e governar o ciclo de vida operacional da sua hospedagem.
+
+---
+
+## 🛠️ Autenticação Necessária
+
+Todas as rotas de gerenciamento de aplicativos requerem o envio da chave de acesso no cabeçalho:
+
+```http
+Authorization: Bearer <seu_token>
+```
+
+---
+
+## 📁 Subcategorias Disponíveis
+
+Nesta aba da barra lateral, você encontrará três subpastas retráteis contendo todas as operações de aplicativos:
+
+* **Gerenciamento:** Obtenção de detalhes, estatísticas de uso (RAM/CPU) e console de logs do container.
+* **Ciclo de Vida:** Controle operacional de status (`start`, `stop`, `restart`, `rebuild` e exclusão).
+* **Deploy & Backups:** Provisionamento inicial via upload de ZIP, downloads de backups compactados e atualizações rápidas de código via commits.

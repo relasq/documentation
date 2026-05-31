@@ -1,0 +1,41 @@
+---
+title: "Criar Nova Aplicação"
+api: "POST https://api.stackr.lat/v1/apps/upload"
+description: "Cria um novo container a partir de um upload multipart/form-data de um arquivo ZIP contendo o código."
+---
+
+Realize o upload de um arquivo ZIP contendo o código-fonte da sua aplicação para criar um novo container no cluster.
+
+### Parâmetros de Requisição
+
+<ParamField body="file" type="file" required>
+  Arquivo compactado em ZIP contendo a aplicação (limite de 50 MB).
+</ParamField>
+
+<ParamField body="botName" type="string">
+  Nome legível para a aplicação.
+</ParamField>
+
+<ParamField body="language" type="string" default="nodejs">
+  Ambiente de execução desejado (`nodejs` ou `python`).
+</ParamField>
+
+<ParamField body="memory" type="number" default="256">
+  Limite de memória RAM em megabytes (ex: `256`, `512`).
+</ParamField>
+
+<ParamField body="slug" type="string">
+  Identificador legível e exclusivo que será usado na URL.
+</ParamField>
+
+### Resposta de Sucesso (`201 Created`)
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+  "name": "meu-novo-bot",
+  "slug": "meu-novo-bot-456",
+  "status": "BUILDING",
+  "message": "Upload recebido com sucesso. O processo de build foi iniciado."
+}
+```

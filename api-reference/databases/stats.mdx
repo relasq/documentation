@@ -1,0 +1,25 @@
+---
+title: "Estatísticas (RAM/CPU)"
+api: "GET https://api.stackr.lat/v1/databases/{id}/stats"
+description: "Retorna a telemetria em tempo real contendo consumo de memória RAM, CPU e tráfego da instância do banco."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  Identificador do seu banco de dados.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "cpuPercentage": 0.12,
+  "memoryUsageBytes": 42109824,
+  "memoryLimitBytes": 268435456,
+  "memoryPercentage": 15.68,
+  "networkRxBytes": 15432,
+  "networkTxBytes": 83439,
+  "online": true
+}
+```

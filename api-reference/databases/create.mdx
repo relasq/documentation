@@ -1,0 +1,32 @@
+---
+title: "Criar Banco"
+api: "POST https://api.stackr.lat/v1/databases"
+description: "Cria e provisiona um novo banco de dados PostgreSQL ou Redis no cluster."
+---
+
+### Parâmetros de Requisição (JSON Body)
+
+<ParamField body="engine" type="string" required>
+  O motor de banco de dados desejado (`postgres` ou `redis`).
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  Nome identificador amigável da instância de banco de dados.
+</ParamField>
+
+<ParamField body="memoryMb" type="number" required>
+  Memória máxima em megabytes a ser alocada (ex: `256`, `512`).
+</ParamField>
+
+### Resposta de Sucesso (`201 Created`)
+
+```json
+{
+  "id": "db_9f8e7d6c-5b4a-3c2b-1a0e-9d8c7b6a5f4e",
+  "name": "meu-db-producao",
+  "engine": "postgres",
+  "status": "PROVISIONING",
+  "connectionString": "postgresql://stackr_user:password@pg.stackr.lat:5432/meu-db-producao",
+  "createdAt": "2026-05-31T19:00:00.000Z"
+}
+```

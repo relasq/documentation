@@ -1,0 +1,28 @@
+---
+title: "Obter Detalhes"
+api: "GET https://api.stackr.lat/v1/apps/{id}"
+description: "Inspeciona as configurações detalhadas e o status do container especificado."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 exclusivo da sua aplicação.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+  "name": "meu-bot-discord",
+  "slug": "meu-bot-discord-123",
+  "language": "nodejs",
+  "status": "RUNNING",
+  "memoryLimit": 256,
+  "startCommand": "npm run start",
+  "nodeName": "AETHER-01",
+  "createdAt": "2026-05-30T12:00:00.000Z",
+  "updatedAt": "2026-05-31T18:00:00.000Z"
+}
+```

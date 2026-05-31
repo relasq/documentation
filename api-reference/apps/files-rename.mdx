@@ -1,0 +1,30 @@
+---
+title: "Renomear/Mover Item"
+api: "PUT https://api.stackr.lat/v1/apps/{id}/files/rename"
+description: "Renomeia ou move um arquivo/pasta no workspace da aplicação."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Parâmetros de Requisição (JSON Body)
+
+<ParamField body="oldPath" type="string" required>
+  Caminho atual do arquivo ou pasta.
+</ParamField>
+
+<ParamField body="newPath" type="string" required>
+  Novo caminho ou nome desejado para o item.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "message": "Item renomeado ou movido com sucesso."
+}
+```

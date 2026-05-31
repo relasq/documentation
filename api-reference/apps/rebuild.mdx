@@ -1,0 +1,21 @@
+---
+title: "Reconstruir Aplicativo"
+api: "POST https://api.stackr.lat/v1/apps/{id}/rebuild"
+description: "Força a reinstalação de dependências e recria o processo de build do container."
+---
+
+### Parâmetros de Rota
+
+<ParamField path="id" type="string" required>
+  O identificador UUID v4 da aplicação.
+</ParamField>
+
+### Resposta de Sucesso (`200 OK`)
+
+```json
+{
+  "success": true,
+  "status": "BUILDING",
+  "message": "O processo de rebuild foi iniciado no cluster."
+}
+```
